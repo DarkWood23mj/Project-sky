@@ -1,0 +1,1357 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-input-placeholder
+{
+    color: #000000;
+}
+#popupDialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.521);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: 1;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#popupDialog > p{
+    color: white;
+}
+
+#popupDialog > button{
+    height: 50px;
+    background:#ffffff00;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    opacity: .8;
+    color: white;
+    cursor: pointer;
+    width: 70%;
+}
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+body{
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+flex-grow: 1;
+justify-content: center;
+font-family: sans-serif;
+background: url(../img/bg3.jpg) center center/cover no-repeat;
+}
+.form_text{
+    text-align: center;
+    display: flex;
+    font-size: 13px;
+}
+.support_form{
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+}
+.support_form > input{
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+    border: 2px solid #000000;
+    color: white;
+    gap: 20px;
+}
+.support_form > button{
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid #000000;
+    border-radius: 8px;
+    width: 250px;
+    height: 25px;
+}
+/* Главная страница */
+
+.container{
+    width: 1400px;
+}
+.text_container{
+    width: 1400px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+    text-align: justify;
+    padding: 5px;
+}
+.text_container > h1{
+    font-size: 11.8px;
+
+}
+.container_profile{
+    height: 840px;
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    display: flex;
+    position: absolute;
+    top: 0;
+}
+
+.logo_container{
+    display: flex;
+}
+
+
+.booking_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.con{
+    height: 105px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0);
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.con > p {
+    font-weight: bolder;
+    text-align: center;
+    height: 36px;
+}
+.con.ab > p{
+    text-align: left;
+}
+.con.ba > p{
+    text-align: left;
+}
+.con > input{
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    text-align: center;
+    background-color: #0000002c;
+    color: rgb(0, 0, 0);
+    display: flex;
+    
+}
+.con.c{  
+    width: 95px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.con.ab, .con.ba{
+    width: 300px;
+}
+ .con.ba > input{
+    width: 300px;
+}
+.con.ab > input{
+    width: 300px;
+}
+.con.d{ 
+    width: 95px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.con.d > input{
+    width: 95px;
+}
+.con.e > input{
+    width: 110px;
+}
+.con.c > input{
+    width: 95px;
+}
+.con.e{
+    width: 110px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.con.f{
+    width: 100px;
+    height: 76px;
+    justify-content: flex-end;
+}
+
+
+
+.header_btn:hover{
+    background-color: #020202;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.header_btn {
+    background-color: #00000000;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    width: 90px;
+    height: 40px;
+   
+}
+.header_buttons{
+    display: flex;
+}
+.header_buttons_container{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.search_magnifier:hover{
+    opacity: .3;
+    transition: 0.5s;
+}
+.search_magnifier:not(:hover){
+    opacity: 1;
+    transition: 0.5s;
+}
+.footer_icons:hover{
+    opacity: .3;
+    transition: 0.5s;
+}
+.footer_icons:not(:hover){
+    opacity: 1;
+    transition: 0.5s;
+}
+.search_btn:hover{
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.5s;
+}
+.search_btn:not(:hover){
+    background-color: #ffffff00;
+    color: #000000;
+    transition: 0.5s;
+}
+
+
+/*фон профиль*/
+
+/*...*/
+
+
+.land_descr{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    color: #0a0a0a;
+    width: 892px;
+    margin: 0;
+}
+.land_text2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    color: #0a0a0a;
+
+    display: flex;
+}
+
+.land_container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    min-height: 87vh;
+    justify-content: center;
+    flex-grow: 1;
+    width: 1400px;
+    
+}
+.land_booking{
+    margin: 0;
+}
+
+
+
+
+.go_to_booking_btn {
+    width: 230px;
+    height: 50px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    background-color: #00000000;
+}
+
+.land_booking .go_to_booking_btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.4s;
+}
+.land_booking .go_to_booking_btn:not(:hover) {
+    background-color: #ffffff00;
+    color: #000000;
+    transition: 0.4s;
+}
+
+
+
+
+
+
+
+/* Бронирование */
+
+.booking, .booking_manage{
+    min-height: 1080px;
+    background: url(/img/bg4.jpg);
+}
+
+
+
+.booking_buttons{
+    display: flex;
+    gap: 30px;
+}
+
+.booking_buttons button{
+    height: 50px;
+    background:#ffffff00;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    opacity: .8;
+    cursor: pointer;
+    width: 120%;
+}
+
+.booking_buttons button:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.4s;
+}
+
+
+
+.booking .booking_window{
+    display: flex;
+    grid-template-columns: 150px 150px 95px 95px 120px 100px;
+    grid-template-rows: 55px 55px;
+    column-gap: 1%;
+    justify-content: space-evenly;
+    justify-items: center;
+    min-height: 300px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+    justify-content: center;
+}
+.booking_window{
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    height: 300px;
+
+    width: 800px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+    justify-content: center;
+}
+input.form_city, input.form_date{
+    text-align: center;
+    border-width: 0px;
+}
+
+.booking_item{
+    display: flex;
+    align-items: center;
+}
+
+
+.booking_item:nth-child(5){
+    grid-column: 5/7;
+    justify-self: flex-start;
+}
+.booking_choose{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.booking_class{
+    padding-left: 20%;
+    width: 120px;
+}
+
+
+.form_city{
+    width: 150px;
+    height: 50px;
+    background: #0000002c;
+    border-radius: 15px;
+}
+
+.form_date{
+    width: 95px;
+    height: 50px;
+    background: #0000002c;
+    border-radius: 15px;
+}
+
+.form_btn_class{
+    border:0px;
+    width: 110px;
+    height: 50px;
+    background: #0000002c;
+    border-radius: 15px;
+}
+
+
+.form_btn_search{
+    border:0px;
+    width: 100px;
+    height: 50px;
+    background: #2a8cd200;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #000000;
+    border: 2px solid #000000;
+    border-color: #000000;
+    cursor: pointer;
+}
+.search_button{
+    border:0px;
+    width: 100px;
+    height: 50px;
+    background: #2a8cd200;
+    border-radius: 15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #000000;
+    border: 2px solid #000000;
+    border-color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search_button:not(:hover){
+    background-color: #02020200;
+    color: #000000;
+    transition: 0.5s;
+}
+.search_button:hover{
+    background-color: #020202;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.form_btn_search:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.3s;
+}
+.form_btn_search:not(:hover) {
+    background-color: #00000000;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+
+/* Страница поиска */
+
+.search {
+    
+    background: url(../img/bg4.jpg) center center/cover no-repeat;
+    min-height: 100vh;
+}
+
+.search, .profile{
+    min-height: 1080px;
+}
+
+.search_window{
+    max-width: 1140px;
+    height: 350px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 20px;
+
+}
+
+.search_header {
+    width: 100;
+    font-style: normal;
+    font-weight:400;
+    font-size: 48px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    line-height: 200px;
+}
+
+.search_str{
+    display: flex;
+    
+}
+
+.search_str input{
+    margin: 0 2.5%;
+    width: 850px;
+    background: #00000000;
+    border-radius: 20px;
+    border:2px solid #000000; 
+    padding: 0px 0px 0px 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    color: #000000;
+}
+
+.search_str button{
+    margin: 0 2.5%;
+    width: 173px;
+    height: 82px;
+    background: #ffffff00;
+    border-radius: 25px;
+    border: 2px solid #000000;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+/* Регистрация */
+
+.register, .login, .seats{
+    background: url('../img/bg4.jpg') center center/cover no-repeat;
+    height: 1080px;
+}
+
+.register_window{
+    padding: 30px 0 50px 0;
+    width: 470px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-direction: column;
+    height: 700px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+}
+.register_window > form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-direction: column;
+}
+.register{
+    padding: 0%;
+}
+
+.register_header, .login_header, .profile_header{
+    width: 100%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+}
+
+.register_window div, .login_window div{
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #000000;
+} 
+
+
+.register_window input, .login_window input{
+    height: 60px;
+    background: #00000000;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    border-width: 2px;
+    width: 350px;
+    font-size: 24px;
+}
+
+.register_btn, .login_btn{
+    display: block;
+    margin: 0;
+    width: 350px;
+    height: 65px;
+    background: #00000033;
+    border: 1px solid #000000;
+    border-radius: 8px; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.register_btn:hover, .login_btn:hover{
+    background-color: #000000;
+    color: white;
+    transition: 0.5s;
+}
+.register_btn:not(:hover), .login_btn:not(:hover){
+    background-color: #00000000;
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+
+/* Вход в профиль */
+
+.login{
+    padding: 0% 0;
+    background: url("../img/bg4.jpg");
+}
+
+.login_window{
+    padding: 40px 0 50px 0;
+    margin: 0;
+    width: 470px;
+    height: 511px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+}
+
+.login_window div:first-child{
+    margin-top: 40px;
+}
+
+#link_to_register{
+    text-transform:none;
+}
+
+#link_to_register a {
+    color: #ffffff;
+    text-underline-offset: 20%;
+}
+
+/* Профиль */
+
+
+
+.profile_window{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-rows: 25% 50% 30%;
+    grid-template-areas:"head head head" 
+                        "photo info info" 
+                        ". something ."; 
+    justify-items: center; 
+    max-width: 1400px;
+    height: 600px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+    
+    
+}
+
+
+.profile_header{
+    grid-area: head;
+}
+
+.place_photo{
+    grid-area: photo;
+}
+
+.profile_info{
+    grid-area: info;
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-template-rows: repeat(3. 1fr);
+    grid-template-areas:"name surname"
+                        "login password"
+                        "   e-mail .";
+}
+
+.profile_info div:nth-child(1){
+    grid-area: name;
+}
+
+.profile_info div:nth-child(2){
+    grid-area: surname;
+}
+
+.profile_info div:nth-child(3){
+    grid-area: login;
+}
+
+.profile_info div:nth-child(4){
+    grid-area: password;
+}
+
+.profile_info div:nth-child(5){
+    grid-area: e-mail;
+}
+
+
+.profile_add_something{
+    grid-area: something;
+}
+
+.profile_header{
+    margin-top: 5%
+}
+
+.place_photo{
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 185px;
+    height: 185px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #ffffffef;
+    border: 0px solid #000000;
+    border-radius: 15px;
+}
+
+.photo_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.photo_wrap:hover{
+    opacity: 0.3;
+    transition: 0.3s;
+}
+.photo_wrap:not(:hover){
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.photo_text{
+    margin-top: 10px;
+}
+
+.blk_info{
+    display: flex;
+    align-items:center;
+    padding-left: 5%;
+    width: 340px;
+    height: 70px;
+    background: #ffffffab;
+    border-radius: 15px;
+
+    font-size: 20px;
+}
+
+.profile_add_something{
+    margin-top: 40px;
+    font-size: 24px;
+    color: #edf2f5;
+}
+
+.blk_info span{
+    color: #000000;
+    text-decoration: underline;
+}
+
+
+/* Управление бронированием */
+
+.manage_window{
+    padding: 70px 3% 0 3%;
+    min-height: 200px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+}
+
+.manage_row1{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.row1_text{
+    margin-right: 3%;
+    width: 300px;
+}
+
+.manage_row2{
+    margin-top: 1%;
+    display: flex;
+    color: black;
+
+}
+
+.manage_row2 input{
+    margin-right: 3%;
+    width: 300px;
+    height: 50px;
+    background: #0000002c;
+    border-radius: 15px;
+    border: #000000;
+}
+
+.form_code::placeholder{
+    color: black;
+}
+
+.form_code{
+    padding-left: 20px;
+}
+
+.form_btn_search{
+    border-radius: 15px;
+}
+
+/* Места бронирования */
+
+.seats {
+    background: url(../img/bg4.jpg);
+}
+
+.seats_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 700px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+}
+
+.seats_sky{
+   position: relative;
+   margin-top: -50px;
+}
+
+.seats_window{
+    padding: 70px 3% 0 3%;
+    height: 650px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(205, 198, 219, 0.3);
+    border-radius: 16px;
+    opacity: .8;
+    margin-top: 40px;
+}
+
+.seats_col-number{
+    margin-top: 15px;
+}
+
+.seats_header h1{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    text-align: center;
+    color: #1B5885;
+}
+
+.seats_table-grid{
+    margin: 0 auto;
+    max-width: 1140px;
+    margin-top: -390px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(21, 30px);
+    grid-template-rows: repeat(8, 30px);
+    gap: 2px;
+    margin-left: 450px;
+}
+
+.seats_empty-row{
+    grid-column: 1/22;
+}
+
+.seats_btn{
+    width: 30px;
+    height: 30px;
+    background: #D9D9D9;
+    border-radius: 5px;
+}
+
+.seats_table-info{
+    margin-top: -180px;
+    display: grid;
+    grid-template-columns: 50px 170px;
+    grid-template-rows: repeat(3, 50px);
+    gap: 10px;
+    margin-left: 40px;
+
+}
+
+.seats_btn-red{
+    background: red;
+    border-radius: 10px;
+    bottom: 20px;
+    position: relative;
+}
+
+.seats_btn-green{
+    background: green;
+    border-radius: 10px;
+    bottom: 20px;
+    position: relative;
+}
+
+.seats_btn-free{
+    background: #b9b9b9;
+    border-radius: 10px;
+    bottom: 20px;
+    position: relative;
+}
+
+
+
+.reviews{
+
+    background: url(../img/bg4.jpg) center center/cover no-repeat;
+    height: 1080px;
+}
+
+.reviews_block {
+    background-color: #edf2f56c;
+    width: 400px;
+    height: 380px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.reviews_reviews {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 30px;
+}
+
+.reviews_peaple {
+    height: 90px;
+    width: 90px;
+    padding: 0 0 0 10px;
+}
+
+.reviews_name {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+padding: 0px 0px 0px 10px;
+}
+
+.reviews_comment {
+    width: 280px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    padding: 0px 0px 0px 10px;
+}
+
+.reviews_title {
+text-align: center;
+width: 931px;
+height: 182px;
+background: rgba(0, 0, 0, 0.418);
+border-radius: 20px;
+
+}
+
+.reviews_clients {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    padding-top: 45px;
+    color: white;
+}
+
+
+
+/*Footer*/
+
+footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-top: #ffffff3a solid 1px;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+
+    
+}
+.footer_container{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+}
+.right_container{
+    margin: 0;
+    width: 20%;
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+}
+.left_container{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items:flex-start;
+
+}
+.link_footer{
+    text-decoration: none;
+    color: white;
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    margin: 0;
+}
+.lower_container > h3{
+    text-decoration: none;
+    color: white;
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    margin: 0;
+}
+.lower_container{
+    display: flex;
+    margin: 0;
+    justify-content: flex-start;
+}
+
+
+.footer_icons{
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
+
+@media screen and (max-width:1440px) {
+    .land_container{
+        width: 80%;
+    }
+    header{
+        width: 80%;
+    }
+    footer{
+        width: 80%;
+    }
+    .footer_container{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:1024px) {
+    .land_container{
+        width: 80%;
+    }
+    header{
+        width: 80%;
+    }
+    footer{
+        width: 80%;
+    }
+    .footer_container{
+        width: 100%;
+    }
+    .land_descr{
+        max-width: 819.19px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .land_container{
+        max-width: 100%;
+    }
+    .land_descr{
+        display: flex;
+        flex-direction: column;
+        max-width: 614.39px;
+       
+    }
+    .land_text2{
+        font-size: 45px;
+        width: 614px;
+    }
+    header{
+        width: 80%;
+    }
+    footer{
+        width: 80%;
+    }
+    .footer_container{
+        width: 100%;
+    }
+    
+
+    .seats_window{
+        max-width: 614.39px;
+        display: flex;
+
+    }
+    .seats_sky{
+        max-width: 768px;
+    }
+    .seats_img{
+        width: 768px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .land_container{
+       
+    }
+    .land_text2 {
+        font-size: 35px;
+        display: flex;
+        text-align: center;
+        max-width: 340px;
+    }
+    .land_descr{
+        max-width: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .land_booking{
+        display: flex;
+        justify-content: center;
+    }
+    .header_container{
+        display: flex;
+        flex-direction: column;
+    }
+    .header_buttons_container{
+        
+    }
+    .logo_container{
+        display: flex;
+        justify-content: center;
+    }
+    .left_container{
+        align-items: center;
+        text-align: center;
+    }
+  
+    .footer_container{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    .right_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .lower_container > h3{
+        font-size: 14px;
+    }
+
+
+}
+
+@media screen and (max-width:375px) {
+    .land_container{
+       
+    }
+   
+    .land_text2 {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 300px;
+    }
+    .land_descr{
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .land_booking{
+        display: flex;
+        justify-content: center;
+    }
+    .header_container{
+        display: flex;
+        flex-direction: column;
+    }
+    .header_buttons_container{
+        gap: 7px;
+    }
+ 
+    .logo_container{
+        display: flex;
+        justify-content: center;
+    }
+    .link_footer{
+        font-size: 12px;
+    }
+    
+    .footer_container{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    .right_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_icons {
+        height: 30px;
+        width: 30px;
+    }
+    .lower_container > h3{
+        font-size: 12px;
+    }
+
+
+}
+
+@media screen and (max-width:320px) {
+    
+    .sky_img{
+        width: 205px;
+    }
+    .search_img{
+        width: 35px;
+        height: 35px;
+    }
+    .plane_img{
+        width: 69.86px;
+    }
+    
+    .header_btn{
+        width: 80px;
+        height: 35px;
+
+    }
+    .go_to_booking_btn{
+        width: 220px;
+        height: 48px;
+    }
+    .land_text2 {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 256px;
+    }
+    .land_descr{
+        max-width: 256px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .land_booking{
+        display: flex;
+        justify-content: center;
+    }
+    .header_container{
+        display: flex;
+        flex-direction: column;
+    }
+    .header_buttons_container{
+        gap: 7px;
+    }
+    .logo_container{
+        display: flex;
+        justify-content: center;
+    }
+    .link_footer{
+        font-size: 10px;
+    }
+  
+    .footer_container{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    .right_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_icons {
+        height: 27px;
+        width: 27px;
+    }
+    .lower_container > h3{
+        font-size: 10px;
+
+    }
+    
+
+}
